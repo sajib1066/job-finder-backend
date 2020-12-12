@@ -1,5 +1,6 @@
 asgiref==3.3.1
 Django==3.1.4
+django-jazzmin==2.4.1
 djangorestframework==3.12.2
 flake8==3.8.4
 mccabe==0.6.1
