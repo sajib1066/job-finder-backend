@@ -5,11 +5,10 @@ services:
     container_name: job-finder-backend
     build:
       context: .
+      dockerfile: ./Dockerfile
     ports:
     - "8000:8000"
     volumes:
     - .:/job-finder-backend
-    command: >
-      sh -c "python manage.py migrate --noinput &&
-             python manage.py runserver 0.0.0.0:8000"
+    command: ./entrypoint.sh
     restart: on-failure
