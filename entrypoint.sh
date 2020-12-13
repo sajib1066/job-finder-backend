@@ -4,6 +4,9 @@
 echo "Collect Staticfiles.............."
 python manage.py collectstatic --noinput
 
+echo "Wait for database................"
+python manage.py wait_for_db
+
 # Apply database migrations
 echo "Apply database migrations........"
 python manage.py migrate

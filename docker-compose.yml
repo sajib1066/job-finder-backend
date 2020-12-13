@@ -1,6 +1,16 @@
 version: "3.7"
 
 services:
+  db:
+    container_name: job_finder_db
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+    - "3307:3307"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: job_finder_db
   app:
     container_name: job-finder-backend
     build:
@@ -12,3 +22,10 @@ services:
     - .:/job-finder-backend
     command: ./entrypoint.sh
     restart: on-failure
+    environment:
+      - DB_HOST=db
+      - DB_NAME=job_finder_db
+      - DB_USER=root
+      - DB_PASS='test1234'
+    depends_on:
+      - db
