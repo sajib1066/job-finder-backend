@@ -3,7 +3,7 @@
 Pull Docker Image
 
 ```
-docker pull sajib1066/job-finder-backend:latest   
+docker pull sajib1066/job-finder-backend:latest
 ```
 
 Run Project With Docker
