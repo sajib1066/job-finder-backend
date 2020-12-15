@@ -12,3 +12,8 @@ Run Project With Docker
 docker run -d -p 8000:8000 sajib1066/job-finder-backend:latest
 ```
 
+Create User
+
+```
+docker exec -it <container_id> python manage.py createsuperuser
+```
