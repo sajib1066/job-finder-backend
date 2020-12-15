@@ -4,6 +4,7 @@ django-jazzmin==2.4.1
 djangorestframework==3.12.2
 flake8==3.8.4
 mccabe==0.6.1
+Pillow==8.0.1
 pycodestyle==2.6.0
 pyflakes==2.2.0
 pytz==2020.4
