@@ -127,3 +127,99 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# juzzmin configuration
+JAZZMIN_SETTINGS = {
+    # title of the window
+    "site_title": "Job Board Admin",
+
+    # Title on the brand, and the login screen (19 chars max)
+    "site_header": "Job Board Admin",
+
+    # Welcome text on the login screen
+    "welcome_sign": "Welcome to the Job Board Admin",
+
+    # Copyright on the footer
+    "copyright": "Sajib Hossain",
+
+    # The model admin to search from the search bar
+    "search_model": "auth.User",
+
+    # Field name on user model that contains avatar image
+    "user_avatar": None,
+
+    ############
+    # Top Menu #
+    ############
+
+    # Links to put along the top menu
+    "topmenu_links": [
+
+        # Url that gets reversed (Permissions can be added)
+        {
+            "name": "Home",
+            "url": "admin:index",
+            "permissions": ["auth.view_user"]
+        },
+        {
+            "name": "Site",
+            "url": "/",
+            "permissions": ["auth.view_user"]
+        },
+
+        # model admin to link to (Permissions checked against model)
+        {"model": "auth.User"},
+    ],
+
+    # Side Menu
+
+    # Whether to display the side menu
+    "show_sidebar": True,
+
+    # Whether to aut expand the menu
+    "navigation_expanded": True,
+
+    # List of apps (and/or models) to base side menu ordering
+    "order_with_respect_to": ["users"],
+
+    # Custom icons https://fontawesome.com/icons?d=gallery&m=free
+    # for a list of icon classes
+    "icons": {
+        "users.profile": "fas fa-address-card",
+        "users.user": "fas fa-user-circle",
+        "auth.Group": "fas fa-users",
+    },
+    # Icons that are used when one is not manually specified
+    "default_icon_parents": "fas fa-chevron-circle-right",
+    "default_icon_children": "fas fa-circle",
+
+    # Related Modal #
+    # Use modals instead of popups
+    "related_modal_active": True,
+
+    #############
+    # UI Tweaks #
+    #############
+    # Relative paths to custom CSS/JS scripts(must be present in static files)
+    "custom_css": None,
+    "custom_js": None,
+    # Whether to show the UI customizer on the sidebar
+    "show_ui_builder": False,
+
+    ###############
+    # Change view #
+    ###############
+    # Render out the change view as a single form, or in tabs
+    # - single
+    # - horizontal_tabs (default)
+    # - vertical_tabs
+    # - collapsible
+    # - carousel
+    "changeform_format": "horizontal_tabs",
+    # override change forms on a per modeladmin basis
+    "changeform_format_overrides": {
+        "auth.user": "collapsible", "auth.group": "vertical_tabs"
+    },
+    # Add a language dropdown into the admin
+    "language_chooser": True,
+}
