@@ -28,4 +28,6 @@ jobs:
     - name: run test
       run: |
         python manage.py test
+        coverage xml -o coverage.xml
+        coverage report
         flake8
