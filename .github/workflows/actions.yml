@@ -2,7 +2,8 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
 name: JOB_FINDER_BACKEND_CI
-
+env:
+    CODECOV_TOKEN: "e3915c0b-ba2a-44ad-8df7-2d06c6bc6644"
 on:
   push:
     branches: [ main ]
@@ -29,3 +30,7 @@ jobs:
         coverage xml -o coverage.xml
         coverage report
         flake8
+    - name: Upload coverage to Codecov  
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
