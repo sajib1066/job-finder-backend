@@ -2,7 +2,10 @@
 [![django-version](https://img.shields.io/badge/django-3.1-green)](https://www.djangoproject.com/)
 [![python-version](https://img.shields.io/badge/python-3.8-blue)](https://www.python.org/)
 [![mysql-version](https://img.shields.io/badge/mysql-8.0.21-orange)](https://www.mysql.com/)
-[![coverage](https://coveralls.io/repos/sajib1066/job-finder-backend/badge.svg?branch=master&service=github)](https://coveralls.io/repos/sajib1066/job-finder-backend/badge.svg?branch=master&service=github)
+[![coverage](https://coveralls.io/repos/sajib1066/job-finder-backend/badge.svg?branch=main&service=github)](https://coveralls.io/repos/sajib1066/job-finder-backend/badge.svg?branch=main&service=github)
+
+[![coverage](https://codecov.io/gh/sajib1066/job-finder-backend/branch/main/graph/badge.svg)](https://codecov.io/gh/sajib1066/job-finder-backend)
+
 [![GH-Actions](https://github.com/sajib1066/job-finder-backend/workflows/JOB_FINDER_BACKEND_CI/badge.svg)](https://github.com/sajib1066/job-finder-backend/actions)
 
 Pull Docker Image
