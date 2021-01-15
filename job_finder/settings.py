@@ -111,6 +111,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTH_USER_MODEL = "users.User"
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+}
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -145,7 +151,7 @@ JAZZMIN_SETTINGS = {
     "copyright": "Sajib Hossain",
 
     # The model admin to search from the search bar
-    "search_model": "auth.User",
+    "search_model": "users.User",
 
     # Field name on user model that contains avatar image
     "user_avatar": None,
@@ -220,7 +226,7 @@ JAZZMIN_SETTINGS = {
     "changeform_format": "horizontal_tabs",
     # override change forms on a per modeladmin basis
     "changeform_format_overrides": {
-        "auth.user": "collapsible", "auth.group": "vertical_tabs"
+        "users.user": "collapsible", "auth.group": "vertical_tabs"
     },
     # Add a language dropdown into the admin
     "language_chooser": True,
