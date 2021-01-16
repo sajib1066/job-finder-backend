@@ -78,7 +78,7 @@ class Profile(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.SET_NULL, blank=True, null=True
     )
-    username = models.CharField(max_length=30, unique=True)
+    username = models.CharField(max_length=30, unique=True, null=True)
     name = models.CharField(max_length=220, blank=True, null=True)
     photo = models.ImageField(upload_to='photos/users/', blank=True, null=True)
     gender_choice = (
@@ -99,7 +99,7 @@ class Profile(models.Model):
     instagram = models.URLField(blank=True, null=True)
     github = models.URLField(blank=True, null=True)
     youtube = models.URLField(blank=True, null=True)
-    updated_date = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateTimeField(auto_now=True)
     joined_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
