@@ -1,3 +1,6 @@
+env:
+  GITHUB_TOKEN: "1a0fdca473210b02a08006d48cf3c75b9d930542"
+  SONAR_TOKEN: "cd74a78122bd39ec91b4b4791837733c37e95888"
 on:
   # Trigger analysis when pushing in master or pull requests, and when creating
   # a pull request. 
@@ -6,7 +9,7 @@ on:
       - main
   pull_request:
       types: [opened, synchronize, reopened]
-name: Main Workflow
+name: Sonar Scan
 jobs:
   sonarcloud:
     runs-on: ubuntu-latest
@@ -18,5 +21,5 @@ jobs:
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
       env:
-        GITHUB_TOKEN: 1a0fdca473210b02a08006d48cf3c75b9d930542
-        SONAR_TOKEN: cd74a78122bd39ec91b4b4791837733c37e95888
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
